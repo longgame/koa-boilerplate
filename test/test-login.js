@@ -16,7 +16,7 @@ describe('Login', function() {
   });
   
   it ('POST /login authenticates user', function *() {
-    return yield request.post('/login')
+    var res = yield request.post('/login')
                 .send(helpers.test_user)
                 .expect(302)
                 .end();

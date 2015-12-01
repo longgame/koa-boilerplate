@@ -1,14 +1,15 @@
 'use strict;'
 
-var _ = require('underscore'),
-    Reflux = require('reflux');
+import Reflux from 'reflux';
+import { History } from 'react-router';
 
-var UserActions = require('../actions/UserActions');
+import UserActions from '../actions/UserActions';
 
 var localStorageKey = 'current-user';
 
 module.exports = Reflux.createStore({
-  listenables: [UserActions],
+  listenables: [ UserActions ],
+  mixins: [ History ],
   init: function() {
     var cached = localStorage.getItem(localStorageKey);
     if (!cached) {
@@ -22,9 +23,19 @@ module.exports = Reflux.createStore({
   },
   onRefreshUser: function(params) {
   },
-  onRegisterUser: function(params) {
+  onRegisterUserCompleted: function(resp) {
+    // FIXME
+    this.history.replaceState(null, '/home');
   },
-  onLoginUser: function(params) {
+  onRegisterUserFailed: function(resp) {
+    alert(resp.status + ':\tfailed to load data:\t' + resp.text);
+  },
+  onLoginUserCompleted: function(resp) {
+    // FIXME
+    this.history.replaceState(null, '/home');
+  },
+  onLoginUserFailed: function(resp) {
+    alert(resp.status + ':\tfailed to load data:\t' + resp.text);
   },
   onLogoutUser: function(params) {
   },

@@ -8,7 +8,14 @@ import Reflux from 'reflux';
 import UserStore from '../stores/UserStore';
 import UserActions from '../actions/UserActions';
 
-import template from './templates/LoginForm.rt';
+import template from './templates/RegistrationForm.rt';
+
+
+function emailIsValid(email) {
+}
+
+function passwordIsValid(password) {
+}
 
 module.exports = React.createClass({
   mixins: [ History, LinkedStateMixin ],
@@ -17,16 +24,17 @@ module.exports = React.createClass({
       user: {},
       email: null,
       password: null,
+      confirm_password: null,
     };
   },
   handleSubmit: function(event) {
-    UserActions.loginUser({
+    UserActions.registerUser({
       email: this.state.email,
       password: this.state.password
     });
   },
-  handleRegister: function(event) {
-    this.history.pushState(null, '/register');
+  handleCancel: function(event) {
+    this.history.goBack();
   },
   render: template
 });

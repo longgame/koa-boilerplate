@@ -49,6 +49,8 @@
     "react-router": "^1.0.0",
     "reflux": "^0.3.0",
     "sequelize": "^3.13.0",
+    "superagent": "^1.4.0",
+    "superagent-promise": "^1.0.3",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
@@ -75,21 +77,5 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.12.1"
-  },
-  "keywords": [
-    "compose",
-    "docker",
-    "docker-compose",
-    "gulp",
-    "koa",
-    "koajs",
-    "mocha",
-    "passport",
-    "postgres",
-    "postgresql",
-    "react",
-    "reflux",
-    "sequelize",
-    "webpack"
-  ]
+  }
 }

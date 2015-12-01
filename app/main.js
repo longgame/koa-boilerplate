@@ -9,6 +9,7 @@ import TodoList from './components/TodoList';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
 
 class App extends React.Component {
   render() {
@@ -35,8 +36,10 @@ var routes = (
         <Route path='/active' component={TodoList} />
         <Route path='/complete' component={TodoList} />
       />
+      <Route path='/home' component={TodoList} />
       <Route path='/about' component={About} />
       <Route path='/login' component={LoginForm} />
+      <Route path='/register' component={RegistrationForm} />
     </Route>
   </Router>
 );

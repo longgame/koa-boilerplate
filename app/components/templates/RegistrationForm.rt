@@ -1,0 +1,32 @@
+<div id='registration-form'>
+  <div class='email-form'>
+    <label>Email: </label>
+    <input
+      valueLink="{ this.linkState('email') }"
+    />
+  </div>
+
+  <div class='password-form'>
+    <label>Password: </label>
+    <input
+      type='password'
+      valueLink="{ this.linkState('password') }"
+    />
+  </div>
+
+  <div class='password-form'>
+    <label>Confirm Password: </label>
+    <input
+      type='password'
+      valueLink="{ this.linkState('confirmPassword') }"
+    />
+  </div>
+
+  <button onClick='{ this.handleSubmit }'>
+    Register
+  </button>
+
+  <button onClick='{ this.handleCancel }'>
+    Cancel
+  </button>
+</div>
